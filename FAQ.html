@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAQ - João e Nivea</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="FAQ.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="C:\Faculdade\2026\Programação Front End\Projetos\projeto-login\images\logo.png">
+
+</head>
+<body class="fac">
+<div class="special-heading">
+<img class="logo" src="images\logo.png" alt="" width="100" height="100">  
+<h1>FAQ</h1>
+</div>
+<div class="container mt-5"> <div class="accordion accordion-flush" id="accordionFlushExample">
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Como funciona o login?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Basta inserir seu usuário e senha na página inicial.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Esqueci minha senha, o que fazer?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Clique em "Esqueci minha senha" na tela de login. Enviaremos um link de redefinição para o seu e-mail cadastrado em instantes.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Não recebi o e-mail de confirmação.
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Verifique sua caixa de spam ou lixo eletrônico. Se ainda não encontrar, aguarde 5 minutos e tente reenviar o código.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Posso entrar com minhas redes sociais?
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Sim! Você pode acessar sua biblioteca usando sua conta Google ou Facebook clicando nos ícones abaixo do botão de login.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            Meu usuário está bloqueado.
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Por segurança, bloqueamos o acesso após 5 tentativas incorretas. O desbloqueio ocorre automaticamente após 30 minutos.</div>
+        </div>
+      </div>
+
+       <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            Como manter minha conta conectada?
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Marque a opção "Lembrar-me" ao fazer login. Recomendamos fazer isso apenas em dispositivos pessoais e seguros.</div>
+        </div>
+      </div>
+      
+      </div>
+</div>
+
+<div id="chat-container" class="chat-closed">
+    <div class="chat-header">
+        <div class="d-flex align-items-center">
+            <img src="C:\Faculdade\2026\Programação Front End\Projetos\projeto-login\images\logo.png" width="30" height="30" class="me-2" style="border-radius: 50%;">
+            <span>Assistente NJ</span>
+        </div>
+        <button onclick="toggleChat()" style="background:none; border:none; color:gold; font-weight:bold; cursor:pointer;">X</button>
+    </div>
+    <div id="chat-messages">
+        <div class="message bot">Olá! Como posso ajudar você hoje?</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Digite sua dúvida..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">➤</button>
+    </div>
+</div>
+
+<div class="btn-faq-circular" onclick="toggleChat()" title="Chat de Ajuda">
+    <img src="images\logo.png" width="40" height="40" style="border-radius: 50%;">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function toggleChat() {
+    const chat = document.getElementById('chat-container');
+    chat.classList.toggle('chat-closed');
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') sendMessage();
+}
+
+function sendMessage() {
+    const input = document.getElementById('user-input');
+    const text = input.value.trim();
+    
+    if (text !== "") {
+        appendMessage(text, 'user');
+        input.value = '';
+        
+        // Simula tempo de resposta da IA
+        setTimeout(() => {
+            const response = getBotResponse(text);
+            appendMessage(response, 'bot');
+        }, 600);
+    }
+}
+
+function appendMessage(text, side) {
+    const msgDiv = document.getElementById('chat-messages');
+    const newMsg = document.createElement('div');
+    newMsg.classList.add('message', side);
+    newMsg.innerText = text;
+    msgDiv.appendChild(newMsg);
+    msgDiv.scrollTop = msgDiv.scrollHeight;
+}
+
+function getBotResponse(input) {
+    const msg = input.toLowerCase();
+    
+    // Lógica de respostas automáticas (FAQ inteligente)
+    if (msg.includes("login") || msg.includes("entrar")) 
+        return "Para entrar, insira seu e-mail e senha na tela principal. Se for novo aqui, clique em 'Cadastre-se'.";
+    
+    if (msg.includes("senha") || msg.includes("esqueci")) 
+        return "Não se preocupe! Na tela de login, clique em 'Esqueci minha senha' para receber um link de recuperação.";
+    
+    if (msg.includes("contato") || msg.includes("falar com alguém")) 
+        return "Você pode falar com o suporte de João e Nívea pelo e-mail: suporte@njbooks.com";
+
+    if (msg.includes("oi") || msg.includes("olá") || msg.includes("bom dia"))
+        return "Olá! Sou o assistente da NJ Books. Como posso ajudar com seu acesso?";
+
+    return "Hum, não entendi bem. Tente perguntar sobre 'login', 'senha' ou 'cadastro'.";
+}
+</script>
+
+</body>
+</html>
